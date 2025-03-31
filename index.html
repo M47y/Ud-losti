@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nevím</title>
+</head>
+<body>
+    <h1 id="text" style="color: blue;">Nadpis</h1>
+    <button onclick="say()">Povídej</button>
+    <button onclick="changeColor()">Změň div</button>
+    <button onclick="changeText()">Změň Nadpis</button>
+    <div id="colorChange" style="background-color: brown;">Ahoj</div>
+</body>
+</html>
+<script>
+    function say(){
+        alert("tlačítko zmáčknuto");
+    }
+
+    function changeColor(){
+        let colors = ["red", "blue", "yellow", "green", "gray", "black", "aquamarine"];
+        let findElement = document.getElementById("colorChange");
+        findElement.style.width = Math.floor(Math.random()*250)+51 +"px";
+        findElement.style.height = Math.floor(Math.random()*50)+51 +"px";
+        findElement.style.backgroundColor = colors[Math.floor(Math.random()*7)];
+    }
+
+    function changeText(){
+        let texts = ["ahoj", "bomba", "pořad", "televize", "počítač", "penál", "myš"];
+        let colors = ["red", "blue", "yellow", "green", "gray", "black", "aquamarine"];
+        let findElement = document.getElementById("text");
+        findElement.innerHTML = texts[Math.floor(Math.random()*7)];
+        findElement.style.color = colors[Math.floor(Math.random()*7)];
+    }
+</script>
